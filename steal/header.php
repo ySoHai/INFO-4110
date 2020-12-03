@@ -9,11 +9,11 @@
 
     <header>
       <nav>
-        <a href="index.php" class="header-brand">mmtuts</a>
+        <a href="index.php" class="header-brand">Edward Nguyen 100333333</a>
         <ul>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">About me</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#">Files</a></li>
+          <li><a href="#">Delete files</a></li>
+          <li><a href="#">To-Be-Used</a></li>
         </ul>
       </nav>
       <a href="cases.php" class="header-cases">Cases</a>

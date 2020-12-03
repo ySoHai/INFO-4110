@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
       mkdir($realDir);
     }
       if (!file_exists($realDir.$fileName)) {
-        if ($fileSize < 131072000) {
+        if ($fileSize < 504857600) {
         //  $fileNameNew = $fileName.".".$fileActualExt;
           $fileDestination =   $realDir.$fileName;
           move_uploaded_file($fileTmpName, $fileDestination);
@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
           echo "Success";
         }
         else {
-          echo "Your file is beiiger than 1GB! Try Again!";
+          echo "Your file is bigger than 500MB! Try Again!";
         }
       }
       else {
