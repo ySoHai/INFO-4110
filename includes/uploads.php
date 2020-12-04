@@ -26,8 +26,10 @@ if(isset($_POST['submit'])){
         //  $fileNameNew = $fileName.".".$fileActualExt;
           $fileDestination =   $realDir.$fileName;
           move_uploaded_file($fileTmpName, $fileDestination);
-         // header("Location: index.php?uploadsuccess");
-          echo "Success";
+          header("Refresh:0");
+          echo '<script language="javascript">';
+          echo 'alert("Successfully Uploaded")';
+          echo '</script>';
         }
         else {
           echo "Your file is bigger than 500MB! Try Again!";

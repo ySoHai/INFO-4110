@@ -9,7 +9,7 @@
 
     <header>
       <nav>
-        <a href="index.php" class="header-brand">Edward Nguyen 100333333</a>
+        <a href="index.php" class="header-brand">Edward Nguyen 100333333 INFO 4110 Project</a>
         <ul>
           <li><a href="#">Files</a></li>
           <li><a href="#">Delete files</a></li>
