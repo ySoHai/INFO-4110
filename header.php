@@ -9,9 +9,9 @@
 
     <header>
       <nav>
-        <a href="index.php" class="header-brand">Edward Nguyen 100333333 INFO 4110 Project</a>
+        <a class="header-brand">Edward Nguyen 100333333 INFO 4110 Project</a>
         <ul>
-          <li><a href="#">Files</a></li>
+          <li><a href="index.php">Files</a></li>
           <li><a href="#">Delete files</a></li>
           <li><a href="#">To-Be-Used</a></li>
         </ul>

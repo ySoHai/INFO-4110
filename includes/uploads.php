@@ -26,21 +26,18 @@ if(isset($_POST['submit'])){
         //  $fileNameNew = $fileName.".".$fileActualExt;
           $fileDestination =   $realDir.$fileName;
           move_uploaded_file($fileTmpName, $fileDestination);
-          header("Refresh:0");
-          echo '<script language="javascript">';
-          echo 'alert("Successfully Uploaded")';
-          echo '</script>';
+          echo "<script>alert('successfully uploaded');document.location='../index.php'</script>";
         }
         else {
-          echo "Your file is bigger than 500MB! Try Again!";
+          echo "<script>alert('Your file is bigger than 500MB! Try Again');document.location='../index.php'</script>";
         }
       }
       else {
-        echo "File already exist! Try Again!";
+        echo "<script>alert('File already exist! Try Again!');document.location='../index.php'</script>";
       }
   }
   else {
-    echo "There was an error uploading your file! Try Again!";
+    echo "<script>alert('There was an error uploading your file! Try Again!');document.location='../index.php'</script>";
   }
 
 
