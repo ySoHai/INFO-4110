@@ -16,5 +16,6 @@
           <li><a href="#">To-Be-Used</a></li>
         </ul>
       </nav>
-      <a href="cases.php" class="header-cases">Cases</a>
+      <!--<a href="cases.php" class="header-cases">Cases</a>
+      -->
     </header>
