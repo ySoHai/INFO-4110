@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
     }
       if (!file_exists($realDir.$fileName)) {
         if ($fileSize < 504857600) {
-        //  $fileNameNew = $fileName.".".$fileActualExt;
+
           $fileDestination =   $realDir.$fileName;
           move_uploaded_file($fileTmpName, $fileDestination);
           echo "<script>alert('Successfully Uploaded');document.location='../index.php'</script>";

@@ -36,6 +36,7 @@
       <?php
           echo'<div class="gallery-upload">
             <form class="form-signup" action="includes/uploads.php" method="post" enctype="multipart/form-data">
+              <p>Drag and Drop or Choose File</p>
               <input type="file" name="fileToUpload" id="fileToUpload">
               <button type="submit" name="submit">UPLOAD</button>
             </form>
