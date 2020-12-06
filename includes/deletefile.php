@@ -1,27 +1,30 @@
 <?php
 $fileNames = $_POST['filename'];
 $removeSpaces = str_replace(" ", "", $fileNames);
-$allFileNames = explode(",", $removeSpaces);
+$allFileNames = explode(",", $removeSpaces); //array
 $countAllNames = count($allFileNames);
 $targetDir = '../uploads/';
 
-for ($i=0; $i < $countAllNames; $i++) {
-  if (file_exists($targetDir.$allFileNames[$i]) == false) {
+
+
+foreach ($allFileNames as $value) {
+  $ext = pathinfo($value, PATHINFO_EXTENSION);
+  $realTargetDir = $targetDir.$ext.'/';
+
+  if (file_exists($realTargetDir.$value)) {
+    if (!unlink($realTargetDir.$value)) {
+        echo "<script>alert('Delete Error');document.location='../delete.php'</script>";
+        exit();
+    }
+    else {
+          echo "<script>alert('Successfully Deleted');document.location='../delete.php'</script>";
+    }
+  }
+  else {
     echo "<script>alert('Delete Error File Does Not Exists');document.location='../delete.php'</script>";
     exit();
-  }
+    }
 }
-
-for ($i=0; $i < $countAllNames; $i++) {
-  $path = $targetDir.$allFileNames[$i];
-  if (!unlink($path)) {
-      echo "<script>alert('Delete Error');document.location='../delete.php'</script>";
-      exit();
-  }
-}
-
-echo "<script>alert('Successfully Deleted');document.location='../delete.php'</script>";
-
 
 
 ?>

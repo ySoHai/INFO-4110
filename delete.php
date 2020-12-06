@@ -36,7 +36,7 @@
       <?php
           echo'<div class="gallery-upload">
             <form class="form-signup" action="includes/deletefile.php" method="post">
-              <input type="text" name="filename" placeholder="Seperate each name with comma (,)" >
+              <input type="text" name="filename" id="filename" placeholder="Seperate each name with comma (,)" >
               <button type="submit" name="submit">Delete</button>
             </form>
           </div>';
