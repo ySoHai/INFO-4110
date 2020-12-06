@@ -21,7 +21,7 @@ foreach ($allFileNames as $value) {
     }
   }
   else {
-    echo "<script>alert('Delete Error File Does Not Exists');document.location='../delete.php'</script>";
+    echo "<script>alert('Delete Error: File Does Not Exist');document.location='../delete.php'</script>";
     exit();
     }
 }
