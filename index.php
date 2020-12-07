@@ -23,13 +23,12 @@
         // Basic loop displaying different messages based on file or folder
 
         foreach ($it as $fileinfo) {
-          if ($fileinfo->isDir()) {
-              //printf("Folder - %s\n", $fileinfo->getFilename());
-              echo '<h3>' . $fileinfo->getFilename() . '</h3>';
-          } elseif ($fileinfo->isFile()) {
-              //printf("File From %s - %s\n", $it->getSubPath(), $fileinfo->getFilename());
-              echo '<div style="background-image: url(uploads/' .$it->getSubPath().'/'. $fileinfo->getFilename() . ');"></div>
-              <p>' . $fileinfo->getFilename() . '</p>';
+          if ($fileinfo->isFile()) {
+              echo '<a href="#">
+              <div style="background-image: url(uploads/' .$it->getSubPath().'/'. $fileinfo->getFilename() . ');"></div>
+              <h3> Folder: ' . $it->getSubPath() . '</h3>
+              <p>' . $fileinfo->getFilename() . '</p>
+              </a>';
           }
       }
 
