@@ -25,10 +25,10 @@
         foreach ($it as $fileinfo) {
           if ($fileinfo->isDir()) {
               //printf("Folder - %s\n", $fileinfo->getFilename());
-              echo '<h3>' . $fileinfo->getFilename . '</h3>';
+              echo '<h3>' . $fileinfo->getFilename() . '</h3>';
           } elseif ($fileinfo->isFile()) {
               //printf("File From %s - %s\n", $it->getSubPath(), $fileinfo->getFilename());
-              echo '<div style="background-image: url(img/gallery/' .$it->getSubPath(). $fileinfo->getFilename() . ');"></div>
+              echo '<div style="background-image: url(uploads/' .$it->getSubPath().'/'. $fileinfo->getFilename() . ');"></div>
               <p>' . $fileinfo->getFilename() . '</p>';
           }
       }
