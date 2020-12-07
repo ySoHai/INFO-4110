@@ -23,10 +23,10 @@
         // Basic loop displaying different messages based on file or folder
         foreach ($it as $fileinfo) {
           if ($fileinfo->isDir()) {
-                echo("Folder - %s<br>", $fileinfo->getFilename());
+                echo('Folder - '.$fileinfo->getFilename().'<br>');
 
             } elseif ($fileinfo->isFile()) {
-                echo("File From %s - %s<br>", $it->getSubPath(), $fileinfo->getFilename());
+                echo('File From '.$it->getSubPath().' - '.$fileinfo->getFilename().'<br>');
             }
           }
           /*
