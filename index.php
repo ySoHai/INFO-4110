@@ -11,12 +11,9 @@
       <div class="gallery-container">
 
         <?php
-        $dir = '../uploads/';
-        $scan = scandir($dir);
-        foreach($scan as $file) {
-           if (!is_dir($dir.$file)) {
-              echo $file.'\n';
-           }
+        foreach (new DirectoryIterator('../uploads') as $fileInfo) {
+            if($fileInfo->isDot()) continue;
+            echo $fileInfo->getFilename() . "<br>\n";
         }
         /*while ($row = mysqli_fetch_assoc($result)) {
           echo '<a href="#">
