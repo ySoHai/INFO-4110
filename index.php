@@ -22,13 +22,15 @@
 
         // Basic loop displaying different messages based on file or folder
         foreach ($it as $fileinfo) {
-            if ($fileinfo->isDir()) {
-                printf("Folder - %s\n", $fileinfo->getFilename());
+          if ($fileinfo->isDir()) {
+                echo("Folder - %s<br>", $fileinfo->getFilename());
+
             } elseif ($fileinfo->isFile()) {
-                printf("File From %s - %s\n", $it->getSubPath(), $fileinfo->getFilename());
+                echo("File From %s - %s<br>", $it->getSubPath(), $fileinfo->getFilename());
             }
-}
-        /*while ($row = mysqli_fetch_assoc($result)) {
+          }
+          /*
+        while ($row = mysqli_fetch_assoc($result)) {
           echo '<a href="#">
             <div style="background-image: url(img/gallery/' . $row["imgFullNameGallery"] . ');"></div>
             <h3>' . $row["titleGallery"] . '</h3>
