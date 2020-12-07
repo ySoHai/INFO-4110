@@ -21,23 +21,24 @@
         $it->setMaxDepth(1);
 
         // Basic loop displaying different messages based on file or folder
-        foreach ($it as $fileinfo) {
+
+        foreach ($it as $fileinfo) { 
           if ($fileinfo->isDir()) {
-                echo('Folder - '.$fileinfo->getFilename().'<br>');
+                // echo('Folder - '.$fileinfo->getFilename().'<br>');
+                echo '<a href="#">
+                  <div style="background-image: url(uploads/' . $fileinfo->getFilename() . ');"></div>';
 
             } elseif ($fileinfo->isFile()) {
-                echo('File From '.$it->getSubPath().' - '.$fileinfo->getFilename().'<br>');
+              //  echo('File From '.$it->getSubPath().' - '.$fileinfo->getFilename().'<br>');
+                echo '
+                <h3>' . $fileinfo->getFilename() . '</h3>
+
+              </a>';
             }
           }
-          /*
-        while ($row = mysqli_fetch_assoc($result)) {
-          echo '<a href="#">
-            <div style="background-image: url(img/gallery/' . $row["imgFullNameGallery"] . ');"></div>
-            <h3>' . $row["titleGallery"] . '</h3>
-            <p>' . $row["descGallery"] . '</p>
-          </a>';
-        }
-        */
+
+
+
         ?>
 
       </div>
