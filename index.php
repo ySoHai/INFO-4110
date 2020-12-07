@@ -31,7 +31,6 @@
                   <p>' . $fileinfo->getFilename() . '<p>
                   </a>';
             }
-          }
 
 
 
