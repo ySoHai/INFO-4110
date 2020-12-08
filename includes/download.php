@@ -1,18 +1,13 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-
-
 if(isset($_REQUEST["file"])){
     // Get parameters
     $file = urldecode($_REQUEST["file"]); // Decode URL-encoded string
 
     /* Test whether the file name contains illegal characters
     such as "../" using the regular expression */
-
-        $fileExt = explode('.', $file);
-        $fileActualExt = strtolower(end($fileExt));
-        $filepath = '../uploads/'.$fileActualExt.'/'.$file.;
+    if(preg_match('/^[^.][-a-z0-9_.]+[a-z]$/i', $file)){
+      $ext = pathinfo($file, PATHINFO_FILENAME);
+        $filepath = "../uploads/" . $file;
 
         // Process download
         if(file_exists($filepath)) {
@@ -30,8 +25,8 @@ if(isset($_REQUEST["file"])){
             http_response_code(404);
 	        die();
         }
-
+    } else {
+        die("Invalid file name!");
+    }
 }
-
-
 ?>
