@@ -84,19 +84,19 @@ header nav ul li a {
   flex-wrap: wrap;
   padding-bottom: 40px;
 }
-
-.cases-links .gallery-container  {
+/*
+.cases-links .gallery-container a {
   width: 23%;
   text-decoration: none;
   margin-right: 2%;
 }
 
-.cases-links .gallery-container  div {
+.cases-links .gallery-container a div {
   width: 100%;
   height: 140px;
 }
 
-.cases-links .gallery-container  h3 {
+.cases-links .gallery-container a h3 {
   font-family: arial;
   font-size: 14px;
   font-weight: 600;
@@ -104,14 +104,14 @@ header nav ul li a {
   padding: 6px 0;
 }
 
-.cases-links .gallery-container  p {
+.cases-links .gallery-container a p {
   font-family: arial;
   font-size: 12px;
   font-weight: 300;
   color: #000;
   padding-bottom: 10px;
 }
-
+*/
 /* Gallery form */
 
 .gallery-upload {
