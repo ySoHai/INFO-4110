@@ -1,4 +1,7 @@
 <?
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+echo exec('whoami');
 $fileName = basename($_GET['file']);
 $fileExt = explode('.', $fileName);
 $targetDir = '../uploads/'.$fileExt.'/';
