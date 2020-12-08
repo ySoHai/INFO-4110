@@ -15,12 +15,12 @@
         // Basic loop displaying different messages based on file or folder
         foreach ($it as $fileinfo) {
           if ($fileinfo->isFile()) {
-              echo '<div class="file-container">
-              <div style="background-image: url(uploads/' . $it->getSubPath().'/'. $fileinfo->getFilename() . ');"></div>
+              echo '<a>
+              <div style="background-image: url(uploads/' .$it->getSubPath().'/'.$fileinfo->getFilename(). ');"></div>
               <h3> Folder: ' . $it->getSubPath() . '</h3>
               <p>' . $fileinfo->getFilename() . 'Size:'.$fileinfo->getSize().'</p>
               <a href="includes/download.php?file='. $it->getSubPath().'/'. $fileinfo->getFilename() .'"></a>
-              </div>';
+              </a>';
             }// get size
         }
 
