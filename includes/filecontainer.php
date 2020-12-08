@@ -13,7 +13,7 @@ foreach ($it as $fileinfo) {
       <h3> Folder: ' . $it->getSubPath() . '</h3>
       <p>' . $fileinfo->getFilename() . '</p>
       <p>Size: ' . $fileinfo->getSize() . '</p>
-      <a href="includes/download.php?file=uploads/'. $it->getSubPath() .'/'. $fileinfo->getFilename() .'"></a>
+      <a href="download.php?file='. $fileinfo->getFilename() .'"></a>
       </a>';
     }
 }
