@@ -1,9 +1,9 @@
 <?
 $fileName = basename($_GET['file']);
-$fileExt = explode('.', $file);
+$fileExt = explode('.', $fileName);
 
 $targetDir = '../uploads/'.$fileExt.'/';
-$filePath = $targetDir.$file;
+$filePath = $targetDir.$fileName;
 
 if(file_exists($filePath)){ // file does not exist
   header('Content-Description: File Transfer');
