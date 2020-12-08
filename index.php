@@ -12,10 +12,7 @@
 
         <?php
         require "includes/filecontainer.php";
-        // Basic loop displaying different messages based on file or folder
-        
-
-      ?>
+        ?>
 
       </div>
 
