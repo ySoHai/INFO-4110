@@ -11,7 +11,7 @@
       <div class="gallery-container">
 
         <?php
-        require "includes/files.php";
+        require "includes/filecontainer.php";
         // Basic loop displaying different messages based on file or folder
         
 
