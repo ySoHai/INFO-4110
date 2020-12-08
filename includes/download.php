@@ -6,7 +6,8 @@ if(isset($_REQUEST["file"])){
     /* Test whether the file name contains illegal characters
     such as "../" using the regular expression */
     if(preg_match('/^[^.][-a-z0-9_.]+[a-z]$/i', $file)){
-      $ext = pathinfo($file, PATHINFO_FILENAME);
+
+        $ext = pathinfo($file, PATHINFO_FILENAME);
         $filepath = "../uploads/". $ext ."/". $file;
 
         // Process download
@@ -22,7 +23,9 @@ if(isset($_REQUEST["file"])){
             readfile($filepath);
             die();
         } else {
-          echo 'file not found';
+          echo 'file not found ';
+          echo $ext.' ';
+          echo $filepath;
             //http_response_code(404);
 	        //die();
         }
