@@ -1,17 +1,22 @@
 <?
+setlocale(LC_ALL,'en_US.UTF-8');
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 echo exec('whoami');
+
 $fileName = basename($_GET['file']);
-$fileExt = explode('.', $fileName);
+$fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
 $targetDir = '../uploads/'.$fileExt.'/';
 $filePath = $targetDir.$fileName;
 
-echo $fileName;
-echo $fileExt;
-echo $targetDir;
-echo $filePath;
-
+echo '<html>
+<body>';
+echo $fileName.'<br>';
+echo $fileExt.'<br>';
+echo $targetDir.'<br>';
+echo $filePath.'<br>';
+echo '</html>
+</body>';
 /*
 if(file_exists($filePath)){ // file does not exist
   header('Content-Description: File Transfer');
@@ -26,3 +31,5 @@ if(file_exists($filePath)){ // file does not exist
   die('file not found');
 }
 */
+
+?>
