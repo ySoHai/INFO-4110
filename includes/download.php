@@ -1,6 +1,7 @@
 <?
 $file = basename($_GET['file']);
-$file = '../uploads/'.$file;
+$fileExt = explode('.', $file)
+$file = '../uploads/'.$fileExt.'/'.$file;
 
 if(!file_exists($file)){ // file does not exist
     die('file not found');
