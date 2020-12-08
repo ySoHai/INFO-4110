@@ -22,8 +22,9 @@ if(isset($_REQUEST["file"])){
             readfile($filepath);
             die();
         } else {
-            http_response_code(404);
-	        die();
+          echo 'file not found';
+            //http_response_code(404);
+	        //die();
         }
     } else {
         die("Invalid file name!");
