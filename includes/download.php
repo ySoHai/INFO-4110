@@ -14,7 +14,8 @@ if(file_exists($filePath)){ // file does not exist
   header('Cache-Control: must-revalidate');
   header('Pragma: public');
   header('Content-Length: ' . filesize($fileName));
-  readfile($filePath);
+  echo $filePath;
+  //readfile($filePath);
 } else {
   die('file not found');
 }
