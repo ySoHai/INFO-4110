@@ -1,5 +1,8 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 setlocale(LC_ALL,'en_US.UTF-8');
+
 
 if(isset($_REQUEST["file"])){
     // Get parameters
