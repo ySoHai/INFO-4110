@@ -7,13 +7,25 @@ $it  = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::SELF_FIRST
 $it->setMaxDepth(1);
 // Basic loop displaying different messages based on file or folder
 foreach ($it as $fileinfo) {
+
   if ($fileinfo->isFile()) {
       echo '<a>
-      <div style="background-image: url(uploads/' . $it->getSubPath() .'/'. $fileinfo->getFilename() . ');"></div>
-      <h3> Folder: ' . $it->getSubPath() . '</h3>
+      <div style="background-image: url(uploads/' . $fileinfo->getSubPath() .'/'. $fileinfo->getFilename() . ');"></div>
+      <h3> Folder: ' . $fileinfo->getSubPath() . '</h3>
       <p>' . $fileinfo->getFilename() . '</p>
       <p>Size: ' . $fileinfo->getSize() . '</p>
       <a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'"></a>
       </a>';
     }
+
 }
+
+/* OLD file conteiner
+  echo '<a>
+  <div style="background-image: url(uploads/' . $it->getSubPath() .'/'. $fileinfo->getFilename() . ');"></div>
+  <h3> Folder: ' . $it->getSubPath() . '</h3>
+  <p>' . $fileinfo->getFilename() . '</p>
+  <p>Size: ' . $fileinfo->getSize() . '</p>
+  <a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'"></a>
+  </a>';
+*/

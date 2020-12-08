@@ -6,7 +6,6 @@ if(isset($_REQUEST["file"])){
 
     /* No test for illegal characters such as "../" using the regular expression */
 
-        // Process download
         if(file_exists($filepath)) {
             header('Content-Description: File Transfer');
             header('Content-Type: application/octet-stream');
@@ -20,7 +19,7 @@ if(isset($_REQUEST["file"])){
             die();
         } else {
             http_response_code(404);
-	          die();
+	          die('File does not esists');
         }
 
 }
