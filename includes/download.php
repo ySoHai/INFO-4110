@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-setlocale(LC_ALL,'en_US.UTF-8');
 
 
 if(isset($_REQUEST["file"])){
@@ -11,8 +10,9 @@ if(isset($_REQUEST["file"])){
     /* Test whether the file name contains illegal characters
     such as "../" using the regular expression */
     if(preg_match('/^[^.][-a-z0-9_.]+[a-z]$/i', $file)){
-        $fileExt = pathinfo($file, PATHINFO_EXTENSION);
-        $filepath = '../uploads/'.$fileExt.'/'.$file.;
+        $fileExt = explode('.', $file);
+        $fileActualExt = strtolower(end($fileExt));
+        $filepath = '../uploads/'.$fileActualExt.'/'.$file.;
 
         // Process download
         if(file_exists($filepath)) {
