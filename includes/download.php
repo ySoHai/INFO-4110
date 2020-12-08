@@ -1,4 +1,4 @@
-<?
+<?php
 setlocale(LC_ALL,'en_US.UTF-8');
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
@@ -33,3 +33,4 @@ if(file_exists($filePath)){ // file does not exist
 */
 -->
 ?>
+C:\Users\edwar\OneDrive\Desktop\INFO 4110 Project\INFO-4110\includes\download.php
