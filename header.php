@@ -12,7 +12,7 @@
         <a class="header-brand">Edward Nguyen 100333333 INFO 4110 Project</a>
         <ul>
           <li><a href="index.php">Files</a></li>
-          <li><a href="delete.php">Delete files</a></li>
+          <li><a href="deletepage.php">Delete files</a></li>
           <li><a href="#">To-Be-Used</a></li>
         </ul>
       </nav>

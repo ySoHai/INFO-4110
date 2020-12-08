@@ -9,11 +9,11 @@ $it->setMaxDepth(1);
 foreach ($it as $fileinfo) {
   if ($fileinfo->isFile()) {
       echo '<a>
-      <div style="background-image: url(uploads/' .$it->getSubPath().'/'.$fileinfo->getFilename(). ');"></div>
+      <div style="background-image: url(uploads/' . $it->getSubPath() .'/'. $fileinfo->getFilename() . ');"></div>
       <h3> Folder: ' . $it->getSubPath() . '</h3>
-      <p>' . $fileinfo->getFilename() . 'Size:'.$fileinfo->getSize().'</p>
-      <p>Size: '.$fileinfo->getSize().'</p>
-      <a href="download.php?file=uploads/'. $it->getSubPath().'/'. $fileinfo->getFilename() .'"></a>
+      <p>' . $fileinfo->getFilename() . '</p>
+      <p>Size: ' . $fileinfo->getSize() . '</p>
+      <a href="download.php?file=uploads/'. $it->getSubPath() .'/'. $fileinfo->getFilename() .'"></a>
       </a>';
     }// need to get size
 }
