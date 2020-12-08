@@ -2,12 +2,11 @@
 if(isset($_REQUEST["file"])){
     // Get parameters
     $file = urldecode($_REQUEST["file"]); // Decode URL-encoded string
-
+    $ext = pathinfo($file, PATHINFO_FILENAME);
     /* Test whether the file name contains illegal characters
     such as "../" using the regular expression */
     if(preg_match('/^[^.][-a-z0-9_.]+[a-z]$/i', $file)){
 
-        $ext = pathinfo($file, PATHINFO_FILENAME);
         $filepath = "../uploads/". $ext ."/". $file;
 
         // Process download
