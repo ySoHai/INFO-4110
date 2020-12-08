@@ -1,14 +1,10 @@
 <?php
 if(isset($_REQUEST["file"])){
-    // Get parameters
     $file = urldecode($_REQUEST["file"]); // Decode URL-encoded string
+    $ext = pathinfo($file, PATHINFO_EXTENSION);
+    $filepath = "../uploads/". $ext ."/". $file;
 
-    /* Test whether the file name contains illegal characters
-    such as "../" using the regular expression */
-    if(preg_match('/^[^.][-a-z0-9_.]+[a-z]$/i', $file)){
-
-        $ext = pathinfo($file, PATHINFO_EXTENSION);
-        $filepath = "../uploads/". $ext ."/". $file;
+    /* No test for illegal characters such as "../" using the regular expression */
 
         // Process download
         if(file_exists($filepath)) {
@@ -19,18 +15,13 @@ if(isset($_REQUEST["file"])){
             header('Cache-Control: must-revalidate');
             header('Pragma: public');
             header('Content-Length: ' . filesize($filepath));
-            flush(); // Flush system output buffer
+            flush();
             readfile($filepath);
             die();
         } else {
-          echo 'file not found ';
-          echo $ext.' ';
-          echo $filepath;
-            //http_response_code(404);
-	        //die();
+            http_response_code(404);
+	          die();
         }
-    } else {
-        die("Invalid file name!");
-    }
+
 }
 ?>
