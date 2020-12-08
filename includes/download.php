@@ -1,10 +1,13 @@
 <?
 $file = basename($_GET['file']);
 $fileExt = explode('.', $file)
-echo $fileExt;
-$targetDir = '../uploads/';
-$filePath = $targetDir.$fileExt.'/'.$file;
+$targetDir = '../uploads/'.$fileExt.'/';
+$filePath = .$file;
 
+echo $fileExt;
+echo $targetDir;
+echo $fileExt;
+/*
 if(file_exists($filePath)){ // file does not exist
   header('Content-Description: File Transfer');
   header('Content-Type: application/octet-stream');
@@ -18,4 +21,4 @@ if(file_exists($filePath)){ // file does not exist
 
   die('file not found');
 }
-?>
+*/

@@ -25,6 +25,3 @@ foreach ($allFileNames as $value) {
     exit();
     }
 }
-
-
-?>
