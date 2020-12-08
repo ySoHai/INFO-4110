@@ -13,15 +13,15 @@ foreach ($allFileNames as $value) {
 
   if (file_exists($realTargetDir.$value)) {
     if (!unlink($realTargetDir.$value)) {
-        echo "<script>alert('Delete Error');document.location='../delete.php'</script>";
+        echo "<script>alert('Delete Error');document.location='../deletepage.php'</script>";
         exit();
     }
     else {
-          echo "<script>alert('Successfully Deleted');document.location='../delete.php'</script>";
+          echo "<script>alert('Successfully Deleted');document.location='../deletepage.php'</script>";
     }
   }
   else {
-    echo "<script>alert('Delete Error: File Does Not Exist');document.location='../delete.php'</script>";
+    echo "<script>alert('Delete Error: File Does Not Exist');document.location='../deletepage.php'</script>";
     exit();
     }
 }
