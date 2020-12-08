@@ -16,7 +16,6 @@ echo $fileExt.'<br>';
 echo $targetDir.'<br>';
 echo $filePath.'<br>';
 echo '</html></body>';
-<!--
 /*
 if(file_exists($filePath)){ // file does not exist
   header('Content-Description: File Transfer');
@@ -31,6 +30,4 @@ if(file_exists($filePath)){ // file does not exist
   die('file not found');
 }
 */
--->
 ?>
-C:\Users\edwar\OneDrive\Desktop\INFO 4110 Project\INFO-4110\includes\download.php
