@@ -17,7 +17,7 @@ echo '<table>
 foreach ($it as $fileinfo) {
   echo'<tr>';
   if ($fileinfo->isDir()){
-    echo '<td>'.$fileinfo->getFilename.'</td>';
+    echo '<td>'. strtoupper($it->getSubPath()).'</td>';
     } elseif ($fileinfo->isFile()) {
         echo '<td>'.$fileinfo->getFilename() . '</td>
               <td>' . $fileinfo->getSize() . '</td>
