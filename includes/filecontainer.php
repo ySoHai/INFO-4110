@@ -15,16 +15,15 @@ echo '<table>
       </tr>';
 // Basic loop displaying different messages based on file or folder
 foreach ($it as $fileinfo) {
+  echo'<tr>';
   if ($fileinfo->isDir()){
-    echo '<tr>
-          <td>'.$fileinfo->getFilename.'</td>';
+    echo '<td>'.$fileinfo->getFilename.'</td>';
     } elseif ($fileinfo->isFile()) {
         echo '<td>'.$fileinfo->getFilename() . '</td>
               <td>' . $fileinfo->getSize() . '</td>
-              <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
-              </tr>';
+              <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>';
       }
-
+  echo'</tr>';
 }
 
 echo '</table>';
