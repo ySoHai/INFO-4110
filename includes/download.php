@@ -7,7 +7,7 @@ if(isset($_REQUEST["file"])){
     such as "../" using the regular expression */
     if(preg_match('/^[^.][-a-z0-9_.]+[a-z]$/i', $file)){
       $ext = pathinfo($file, PATHINFO_FILENAME);
-        $filepath = "../uploads/" . $file;
+        $filepath = "../uploads/". $ext ."/". $file;
 
         // Process download
         if(file_exists($filepath)) {
