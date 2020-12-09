@@ -6,6 +6,21 @@ $it  = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::SELF_FIRST
 // Maximum depth is 1 level deeper than the base folder
 $it->setMaxDepth(1);
 
+function formatBytes($bytes, $precision = 2) {
+    $units = array('B', 'KB', 'MB', 'GB', 'TB');
+
+    $bytes = max($bytes, 0);
+    $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+    $pow = min($pow, count($units) - 1);
+
+    // Uncomment one of the following alternatives
+    // $bytes /= pow(1024, $pow);
+    // $bytes /= (1 << (10 * $pow));
+
+    return round($bytes, $precision) . ' ' . $units[$pow];
+}
+
+
 echo '<table>
       <tr>
       <th>Folder</th>
@@ -16,11 +31,11 @@ echo '<table>
 // Basic loop displaying different messages based on file or folder
 foreach ($it as $fileinfo) {
   echo'<tr>';
-  if ($fileinfo->isDir()){
+
     echo '<td>'. strtoupper($it->getSubPath()).'</td>';
-    } elseif ($fileinfo->isFile()) {
+    if ($fileinfo->isFile()) {
         echo '<td>'.$fileinfo->getFilename() . '</td>
-              <td>' . $fileinfo->getSize() . '</td>
+              <td>' . formatBytes($fileinfo->getSize()) . '</td>
               <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>';
       }
   echo'</tr>';
