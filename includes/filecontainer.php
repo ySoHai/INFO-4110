@@ -68,7 +68,7 @@ echo '<table>
       }elseif ($fileinfo->isFile()) {
             echo '<tr>
                   <td></td>
-                  <td> <img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">'.$fileinfo->getFilename() . '</td>
+                  <td> <img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">  '.$fileinfo->getFilename() . '</td>
                   <td>' . formatSizeUnits($fileinfo->getSize()) . '</td>
                   <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
