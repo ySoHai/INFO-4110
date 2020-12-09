@@ -40,9 +40,17 @@ echo '<table>
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
       if ($fileinfo->isDir()) {
-        echo'<tr>';
-        echo '<td>'. strtoupper($fileinfo->getFilename()).'</td>';
-        echo'</tr>';
+        if (is_dir_empty($fileinfo->getFilename())) {
+          echo '<tr>
+                <td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>
+                <td>Folder empty</td>
+                </tr>';
+        }else {
+          echo '<tr>
+                <td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>
+                </tr>';
+        }
+
       }elseif ($fileinfo->isFile()) {
             echo '<tr>
                   <td></td>
