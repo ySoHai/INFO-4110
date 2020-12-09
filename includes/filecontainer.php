@@ -40,23 +40,19 @@ echo '<table>
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
       if ($fileinfo->isDir()) {
-        if (is_dir_empty('./uploads/'$fileinfo->getFilename())) {
-          echo '<tr>
-                <td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>
-                <td>Folder empty</td>
-                </tr>';
-        }else {
-          echo '<tr>
-                <td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>
-                </tr>';
-        }
-
+        echo '<tr>
+              <td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>
+              </tr>';
       }elseif ($fileinfo->isFile()) {
             echo '<tr>
                   <td></td>
                   <td> <img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">'.$fileinfo->getFilename() . '</td>
                   <td>' . formatSizeUnits($fileinfo->getSize()) . '</td>
                   <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
+                  </tr>';
+          }else {
+            echo '<tr>
+                  <td><h4>Folder Empty</h4></td>
                   </tr>';
           }
   }
