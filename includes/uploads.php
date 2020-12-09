@@ -21,22 +21,23 @@ if(isset($_POST['submit'])){
     if (!is_dir($realDir)) {
       mkdir($realDir);
     }
-      if (!file_exists($realDir.$fileName)) {
-        if ($fileSize < 504857600) {
+      if (strlen($fileName) < 36) {
+        if (!file_exists($realDir.$fileName)) {
+          if ($fileSize < 504857600) {
 
-          $fileDestination =   $realDir.$fileName;
-          move_uploaded_file($fileTmpName, $fileDestination);
-          echo "<script>alert('Successfully Uploaded');document.location='../index.php'</script>";
+            $fileDestination =   $realDir.$fileName;
+            move_uploaded_file($fileTmpName, $fileDestination);
+            echo "<script>alert('Successfully Uploaded');document.location='../index.php'</script>";
+          }else {
+            echo "<script>alert('Error: Your file is bigger than 500MB! Try Again');document.location='../index.php'</script>";
+          }
+        }else {
+          echo "<script>alert('Error: File already exist!');document.location='../index.php'</script>";
         }
-        else {
-          echo "<script>alert('Your file is bigger than 500MB! Try Again');document.location='../index.php'</script>";
-        }
+      }else {
+        echo "<script>alert('Error: File name larger than 35 characters');document.location='../index.php'</script>";
       }
-      else {
-        echo "<script>alert('File already exist! Try Again!');document.location='../index.php'</script>";
-      }
-  }
-  else {
+  }else {
     echo "<script>alert('There was an error uploading your file! Try Again!');document.location='../index.php'</script>";
   }
 
