@@ -64,6 +64,9 @@ header nav ul li a {
 
 /* Gallery */
 
+table {
+  padding: 10px;
+}
 
 .cases-links h2 {
   padding-top: 20px;
