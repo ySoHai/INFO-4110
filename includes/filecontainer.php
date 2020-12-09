@@ -38,17 +38,17 @@ echo '<table>
       <th>Dowload Link</th>
       </tr>';
 // Basic loop displaying different messages based on file or folder
-foreach ($it as $fileinfo) {
-  echo'<tr>';
+  foreach ($it as $fileinfo) {
+    echo'<tr>';
 
-    echo '<td>'. strtoupper($it->getSubPath()).'</td>';
-    if ($fileinfo->isFile()) {
-        echo '<td>'.$fileinfo->getFilename() . '</td>
-              <td>' . formatSizeUnits($fileinfo->getSize()) . '</td>
-              <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>';
-      }
-  echo'</tr>';
-}
+      echo '<td>'. strtoupper($it->getSubPath()).'</td>';
+      if ($fileinfo->isFile()) {
+          echo '<td> <img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'">'.$fileinfo->getFilename() . '</td>
+                <td>' . formatSizeUnits($fileinfo->getSize()) . '</td>
+                <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>';
+        }
+    echo'</tr>';
+  }
 
 echo '</table>';
 
