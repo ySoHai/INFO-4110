@@ -6,18 +6,27 @@ $it  = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::SELF_FIRST
 // Maximum depth is 1 level deeper than the base folder
 $it->setMaxDepth(1);
 
-function formatBytes($bytes, $precision = 2) {
-    $units = array('B', 'KB', 'MB', 'GB', 'TB');
+function formatSizeUnits($bytes){
+    if ($bytes >= 1073741824){
+        $bytes = number_format($bytes / 1073741824, 2) . ' GB';
+    }
+    elseif ($bytes >= 1048576){
+        $bytes = number_format($bytes / 1048576, 2) . ' MB';
+    }
+    elseif ($bytes >= 1024){
+        $bytes = number_format($bytes / 1024, 2) . ' KB';
+    }
+    elseif ($bytes > 1){
+        $bytes = $bytes . ' bytes';
+    }
+    elseif ($bytes == 1){
+        $bytes = $bytes . ' byte';
+    }
+    else{
+        $bytes = '0 bytes';
+    }
 
-    $bytes = max($bytes, 0);
-    $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
-    $pow = min($pow, count($units) - 1);
-
-    // Uncomment one of the following alternatives
-    // $bytes /= pow(1024, $pow);
-    // $bytes /= (1 << (10 * $pow));
-
-    return round($bytes, $precision) . ' ' . $units[$pow];
+    return $bytes;
 }
 
 
@@ -35,7 +44,7 @@ foreach ($it as $fileinfo) {
     echo '<td>'. strtoupper($it->getSubPath()).'</td>';
     if ($fileinfo->isFile()) {
         echo '<td>'.$fileinfo->getFilename() . '</td>
-              <td>' . formatBytes($fileinfo->getSize()) . '</td>
+              <td>' . formatSizeUnits($fileinfo->getSize()) . '</td>
               <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>';
       }
   echo'</tr>';
