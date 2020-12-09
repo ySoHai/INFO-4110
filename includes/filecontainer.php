@@ -6,6 +6,13 @@ $it  = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::SELF_FIRST
 // Maximum depth is 1 level deeper than the base folder
 $it->setMaxDepth(1);
 
+$supported_image = array(
+    'gif',
+    'jpg',
+    'jpeg',
+    'png'
+);
+
 function formatSizeUnits($bytes){
     if ($bytes >= 1073741824){
         $bytes = number_format($bytes / 1073741824, 2) . ' GB';
@@ -71,7 +78,12 @@ echo '<table>
       }elseif ($fileinfo->isFile()) {
             echo '<tr>
                   <td></td>
-                  <td> <img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">  '.$fileinfo->getFilename() . '</td>
+                  <td>';
+            if (in_array($it->getSubPath(), $supported_image)) {
+              echo '<img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">';
+            }
+
+            echo  $fileinfo->getFilename() . '</td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
