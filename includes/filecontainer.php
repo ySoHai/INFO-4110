@@ -56,11 +56,11 @@ echo '<table>
   foreach ($it as $fileinfo) {
       if ($fileinfo->isDir()) {
         echo '<tr>';
-        if (dir_is_empty('../uploads/' . $fileinfo->getFilename() . '/')) {
-          echo '<td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>
+        if (dir_is_empty('../uploads/' . $fileinfo->getFilename())) {
+          echo '<td><h5>'. strtoupper($fileinfo->getFilename()).'</h5></td>
                 <td>Folder Empty</td>';
         }else {
-          echo '<td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>';
+          echo '<td><h5>'. strtoupper($fileinfo->getFilename()).'</h5></td>';
         }
 
         echo  '</tr>';
