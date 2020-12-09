@@ -60,6 +60,7 @@ echo '<table>
           echo '<td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>
                 </tr>
                 <tr>
+                <td></td>
                 <td>Folder Empty</td>
                 </tr>';
         }else {
