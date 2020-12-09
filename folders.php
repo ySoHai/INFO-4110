@@ -8,8 +8,6 @@
   <section class="cases-links">
     <div class="wrapper">
       <h2>Files</h2>
-      <button> Sort by file name </button>
-      <button> Sort by size </button>
 
       <div class="gallery-container">
 
