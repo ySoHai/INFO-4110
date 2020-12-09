@@ -29,6 +29,21 @@ function formatSizeUnits($bytes){
     return $bytes;
 }
 
+function dir_is_empty($path)
+{
+    $empty = true;
+    $dir = opendir($path);
+    while($file = readdir($dir))
+    {
+        if($file != '.' && $file != '..')
+        {
+            $empty = false;
+            break;
+        }
+    }
+    closedir($dir);
+    return $empty;
+}
 
 echo '<table>
       <tr>
@@ -40,9 +55,16 @@ echo '<table>
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
       if ($fileinfo->isDir()) {
-        echo '<tr>
-              <td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>
-              </tr>';
+        echo '<tr>';
+        if (dir_is_empty('../uploads/' . $fileinfo->getFilename() . '/')) {
+          echo '<td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>
+                <td>Folder Empty</td>';
+        }else {
+          echo '<td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>';
+        }
+
+        echo  '</tr>';
+
       }elseif ($fileinfo->isFile()) {
             echo '<tr>
                   <td></td>
@@ -52,7 +74,7 @@ echo '<table>
                   </tr>';
           }else {
             echo '<tr>
-                  <td><h4>Folder Empty</h4></td>
+                  <td>Folder Empty</td>
                   </tr>';
           }
   }
