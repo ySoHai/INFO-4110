@@ -39,15 +39,18 @@ echo '<table>
       </tr>';
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
-    echo'<tr>';
-
-      echo '<td>'. strtoupper($it->getSubPath()).'</td>';
-      if ($fileinfo->isFile()) {
-          echo '<td> <img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">'.$fileinfo->getFilename() . '</td>
-                <td>' . formatSizeUnits($fileinfo->getSize()) . '</td>
-                <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>';
-        }
-    echo'</tr>';
+      if ($fileinfo->isDir()) {
+        echo'<tr>';
+        echo '<td>'. strtoupper($fileinfo->getFilename()).'</td>';
+        echo'</tr>';
+      }elseif ($fileinfo->isFile()) {
+            echo '<tr>
+                  <td></td>
+                  <td> <img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">'.$fileinfo->getFilename() . '</td>
+                  <td>' . formatSizeUnits($fileinfo->getSize()) . '</td>
+                  <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
+                  </tr>';
+          }
   }
 
 echo '</table>';
