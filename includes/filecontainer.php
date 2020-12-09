@@ -57,7 +57,7 @@ echo '<table>
       if ($fileinfo->isDir()) {
         echo '<tr>';
         if (dir_is_empty('./uploads/' . $fileinfo->getFilename() . '/')) {
-          echo '<td><b>'. strtoupper($fileinfo->getFilename()).' - Empty</b></td>
+          echo '<td><b>'. strtoupper($fileinfo->getFilename()).'</b></td>
                 </tr>
                 <tr>
                 <td></td>
@@ -72,8 +72,8 @@ echo '<table>
             echo '<tr>
                   <td></td>
                   <td> <img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">  '.$fileinfo->getFilename() . '</td>
-                  <td>' . formatSizeUnits($fileinfo->getSize()) . '</td>
-                  <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
+                  <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
+                  <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
           }else {
             echo '<tr>
