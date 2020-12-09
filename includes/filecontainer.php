@@ -59,16 +59,16 @@ $mainDataArr = array();
 foreach ($it as $fileinfo) {
   if ($fileinfo->isDir()) {
     $$fileinfo->getFilename() = array();
-    $$fileinfo->getFilename()[0] = array(); //fileName
-    $$fileinfo->getFilename()[1] = array(); //fileSize
-    $$fileinfo->getFilename()[2] = array(); //fileName
-    array_push($mainDataArr, $$fileinfo->getFilename());
+    $$fileinfo->getFilename()[0] = array() //fileName
+    $$fileinfo->getFilename()[1] = array() //fileSize
+    $$fileinfo->getFilename()[2] = array() //fileName
+    $mainDataArr.push($$fileinfo->getFilename())
   } elseif ($fileinfo->isFile()) {
     //populate arrays
     $withoutExt = preg_replace('/\\.[^.\\s]{2,6}$/', '', $fileInfo->getFilename());
-    $mainDataArr[$$withoutExt][0] = $fileinfo->getFilename();
-    $mainDataArr[$$withoutExt][1] = formatSizeUnits($fileinfo->getSize());
-    $mainDataArr[$$withoutExt][2] = urlencode($fileinfo->getFilename());
+    $mainDataArr[$$withoutExt][0] = $fileinfo->getFilename()
+    $mainDataArr[$$withoutExt][1] = formatSizeUnits($fileinfo->getSize())
+    $mainDataArr[$$withoutExt][2] = urlencode($fileinfo->getFilename())
     //array[0] = fileName
     //array[1] = fileSize
     //array[2] = link
@@ -86,9 +86,9 @@ foreach ($mainDataArr as &value){
   //mainDataArr[n] = fileType[]
   if (empty($value)){
     $foldername = preg_replace('/\\.[^.\\s]{2,6}$/', '', $value[0]);
-    $fileName = $value[0];
-    $fileSize = $value[1];
-    $fileDownload =$value[2];
+    $fileName = $value[0]
+    $fileSize = $value[1]
+    $fileDownload =$value[2]
     echo '<td><u><b>'. strtoupper($foldername).'</b></u></td>
           </tr>
           <tr>
