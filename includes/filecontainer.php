@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
 // Create recursive dir iterator which skips dot folders
 $dir = new RecursiveDirectoryIterator('./uploads', FilesystemIterator::SKIP_DOTS);
 // Flatten the recursive iterator, folders come before their files
