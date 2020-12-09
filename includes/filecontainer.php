@@ -57,14 +57,14 @@ echo '<table>
       if ($fileinfo->isDir()) {
         echo '<tr>';
         if (dir_is_empty('./uploads/' . $fileinfo->getFilename() . '/')) {
-          echo '<td><h4>'. strtoupper($fileinfo->getFilename()).' - Empty</h4></td>
+          echo '<td><b>'. strtoupper($fileinfo->getFilename()).' - Empty</b></td>
                 </tr>
                 <tr>
                 <td></td>
                 <td>No Files</td>
                 </tr>';
         }else {
-          echo '<td><h4>'. strtoupper($fileinfo->getFilename()).'</h4></td>
+          echo '<td><b>'. strtoupper($fileinfo->getFilename()).'</b></td>
           </tr>';
         }
 
