@@ -71,7 +71,7 @@ echo '<table>
                 <td>No Files</td>
                 </tr>';
         }else {
-          echo '<td><b>'. strtoupper($fileinfo->getFilename()).'</b></td>
+          echo '<td><u><b>'. strtoupper($fileinfo->getFilename()).'</b></u></td>
           </tr>';
         }
 
