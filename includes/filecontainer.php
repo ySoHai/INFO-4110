@@ -43,7 +43,7 @@ echo '<table>
 
       echo '<td>'. strtoupper($it->getSubPath()).'</td>';
       if ($fileinfo->isFile()) {
-          echo '<td> <img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'">'.$fileinfo->getFilename() . '</td>
+          echo '<td> <img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">'.$fileinfo->getFilename() . '</td>
                 <td>' . formatSizeUnits($fileinfo->getSize()) . '</td>
                 <td><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>';
         }
