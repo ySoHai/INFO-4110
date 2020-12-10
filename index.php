@@ -8,18 +8,17 @@
   <section class="cases-links">
     <div class="wrapper">
       <h2>Files</h2>
+      <h6>
+        TO DO:<br>
+        -Fix CSS (IDK WHAT IM DOING)<br>
+        -Fix column sort for download link<br>
+        -Fix table for folders page<br>
+        -Make drag and drop area bigger (add js popout to upload??)<br>
+        -Searching by file name<br>
+        -Establish rules for new file types (prob cant do cuz brain small boi)<br>
+      </h6>
       <div class="gallery-container">
         <h4>Click Column Header to Sort</h4>
-        <br>
-        <h6>
-          TO DO:<br>
-          -Fix CSS (IDK WHAT IM DOING)<br>
-          -Fix column sort for download link<br>
-          -Fix table for folders page<br>
-          -Make drag and drop area bigger (add js popout to upload??)<br>
-          -Searching by file name<br>
-          -Establish rules for new file types (prob cant do cuz brain small boi)<br>
-        </h6>
         <?php
         require "includes/filecontainer.php";
         ?>
