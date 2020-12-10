@@ -26,21 +26,19 @@ function dir_is_empty($path)
 }
 
 echo '<table class="sortable">
+      <thead>
       <tr>
       <th><u>Folders</u></th>
-      <th>   </th>
-      <th>   </th>
       <th>Is file empty</th>
-      </tr>';
+      </tr>
+      </thead>';
 
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
       if ($fileinfo->isDir()) {
             echo '<tr>
                   <td style="text-align: center; vertical-align: middle;"><u><b>'. strtoupper($fileinfo->getFilename()) .'</b></u>
-                  </td>
-                  <td></td>
-                  <td></td>';
+                  </td>';
             if (dir_is_empty('./uploads/' . $fileinfo->getFilename() . '/')) {
               echo '<td style="text-align: center; vertical-align: middle;">True</td>
                     </tr>';

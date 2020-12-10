@@ -40,6 +40,7 @@ function formatSizeUnits($bytes){
 
 
 echo '<table class="sortable">
+      <thead>
       <tr>
       <th>File Name</th>
       <th>Folder</th>
@@ -47,7 +48,8 @@ echo '<table class="sortable">
       <th>Access Date (MM/DD)</th>
       <th>Created Date (MM/DD)</th>
       <th>Dowload Link</th>
-      </tr>';
+      </tr>
+      </thead>';
       // 1 File Name</th>
       // 2 Folder</th>
       // 3 Size</th>
@@ -60,7 +62,7 @@ echo '<table class="sortable">
   foreach ($it as $fileinfo) {
       if ($fileinfo->isFile()) {
             $filePath = "/var/www/html/uploads/". $it->getSubPath() ."/". $fileinfo->getFilename();
-            echo '<tr><td>';
+            echo '<tbody><tr><td>';
             if (in_array($it->getSubPath(), $supported_image)) {
                echo '<img src="' . "../uploads/". $it->getSubPath() ."/". $fileinfo->getFilename() . '" width="35" height="35">';
             }
@@ -71,7 +73,8 @@ echo '<table class="sortable">
                   <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",fileatime($filePath)) .'</td>
                   <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",filectime($filePath)) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
-                  </tr>';
+                  </tr>
+                  </tbody>';
           }
   }
 
