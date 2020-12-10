@@ -54,28 +54,29 @@ function dir_is_empty($path)
 
 echo '<table>
       <tr>
-      <th>Folder</th>
       <th>File Name</th>
+      <th>Folder</th>
       <th>Size</th>
       <th>Dowload Link</th>
       </tr>';
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
-      if ($fileinfo->isDir()) {
-        echo '<tr>';
-        if (dir_is_empty('./uploads/' . $fileinfo->getFilename() . '/')) {
-          echo '<td><u><b>'. strtoupper($fileinfo->getFilename()).'</b></u></td>
-                </tr>
-                <tr>
-                <td></td>
-                <td>No Files</td>
-                </tr>';
-        }else {
-          echo '<td><u><b>'. strtoupper($fileinfo->getFilename()).'</b></u></td>
-          </tr>';
-        }
-
-      }elseif ($fileinfo->isFile()) {
+      // if ($fileinfo->isDir()) {
+      //   echo '<tr>';
+      //   if (dir_is_empty('./uploads/' . $fileinfo->getFilename() . '/')) {
+      //     echo '<td><u><b>'. strtoupper($fileinfo->getFilename()).'</b></u></td>
+      //           </tr>
+      //           <tr>
+      //           <td></td>
+      //           <td>No Files</td>
+      //           </tr>';
+      //   }else {
+      //     echo '<td><u><b>'. strtoupper($fileinfo->getFilename()).'</b></u></td>
+      //     </tr>';
+      //   }
+      //
+      // }else
+      if ($fileinfo->isFile()) {
             echo '<tr>
                   <td></td>
                   <td>';
@@ -84,6 +85,7 @@ echo '<table>
             }
 
             echo  $fileinfo->getFilename() . '</td>
+                  <td><u><b>'. strtoupper($it->getSubPath()).'</b></u></td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
