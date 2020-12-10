@@ -78,14 +78,14 @@ echo '<table>
             $filepath = "/var/www/html/uploads/". $it->getSubPath() ."/". $fileinfo->getFilename();
             echo '<tr><td>';
             if (in_array($it->getSubPath(), $supported_image)) {
-               echo '<img src="'. $filepath .'" width="35" height="35">';
+               echo '<img src="' . "../uploads/". $it->getSubPath() ."/". $fileinfo->getFilename() . '" width="35" height="35">';
             }
 
             echo  $fileinfo->getFilename() . '</td>
                   <td><u><b>'. strtoupper($it->getSubPath()).'</b></u></td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
-                  <td style="text-align: center; vertical-align: middle;">' . fileatime($filepath) .'</td>
-                  <td style="text-align: center; vertical-align: middle;">' . filemtime($filepath) . '</td>
+                  <td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i",fileatime($filepath)) .'</td>
+                  <td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i",filectime($filepath)) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
           }
