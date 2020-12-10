@@ -77,9 +77,7 @@ echo '<table>
       //
       // }else
       if ($fileinfo->isFile()) {
-            echo '<tr>
-                  <td></td>
-                  <td>';
+            echo '<tr><td>';
             if (in_array($it->getSubPath(), $supported_image)) {
               echo '<img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">';
             }
