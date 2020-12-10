@@ -8,6 +8,7 @@
   <section class="cases-links">
     <div class="wrapper">
       <h2>Delete Files</h2>
+      <h4>Click Column Header to Sort</h4>
       <div class="gallery-container">
 
         <?php
