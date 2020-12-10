@@ -57,34 +57,33 @@ echo '<table>
       <th>File Name</th>
       <th>Folder</th>
       <th>Size</th>
+      <th>Last Access</th>
+      <th>Created Date</th>
       <th>Dowload Link</th>
       </tr>';
+      // 1 File Name</th>
+      // 2 Folder</th>
+      // 3 Size</th>
+      // 4 Last Access</th>
+      // 5 Created Date</th> filectime
+      // 6 Dowload Link</th>
+
+
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
-      // if ($fileinfo->isDir()) {
-      //   echo '<tr>';
-      //   if (dir_is_empty('./uploads/' . $fileinfo->getFilename() . '/')) {
-      //     echo '<td><u><b>'. strtoupper($fileinfo->getFilename()).'</b></u></td>
-      //           </tr>
-      //           <tr>
-      //           <td></td>
-      //           <td>No Files</td>
-      //           </tr>';
-      //   }else {
-      //     echo '<td><u><b>'. strtoupper($fileinfo->getFilename()).'</b></u></td>
-      //     </tr>';
-      //   }
-      //
-      // }else
+      $path = "../uploads/" . $it->getSubPath() . "/" .$fileinfo->getFilename();
       if ($fileinfo->isFile()) {
             echo '<tr><td>';
+
             if (in_array($it->getSubPath(), $supported_image)) {
-              echo '<img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">';
+              echo '<img src="'.$path.'" width="20" height="20">';
             }
 
             echo  $fileinfo->getFilename() . '</td>
                   <td><u><b>'. strtoupper($it->getSubPath()).'</b></u></td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
+                  <td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i", fileatime($path) . '</td>
+                  <td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i", filectime($path) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
           }
