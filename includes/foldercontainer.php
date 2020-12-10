@@ -38,7 +38,7 @@ echo '<table>
             echo '<tr>
                   <td><u><b>'. strtoupper($fileinfo->getFilename()) .'</b></u>
                   </td>
-                  <tr></td>';
+                  <td></td>';
             if (dir_is_empty('./uploads/' . $fileinfo->getFilename() . '/')) {
               echo '<td>True</td>
                     </tr>';
