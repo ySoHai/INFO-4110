@@ -83,7 +83,7 @@ echo '<table>
                   <td><u><b>'. strtoupper($it->getSubPath()).'</b></u></td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
                   <td style="text-align: center; vertical-align: middle;">' . fileatime($filepath) .'</td>
-                  <td style="text-align: center; vertical-align: middle;">' . filectime($filepath) . '</td>
+                  <td style="text-align: center; vertical-align: middle;">' . filemtime($filepath) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
           }
