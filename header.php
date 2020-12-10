@@ -6,7 +6,6 @@
   </head>
   <link rel="stylesheet" href="style.css">
   <body>
-    <script src="./src/tablesort.js"></script>
     <header>
       <nav>
         <a class="header-brand">Edward Nguyen 100333333 INFO 4110 Project</a>

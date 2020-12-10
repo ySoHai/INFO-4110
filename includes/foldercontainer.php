@@ -25,7 +25,7 @@ function dir_is_empty($path)
     return $empty;
 }
 
-echo '<table class="table-sortable">
+echo '<table class="sortable">
       <tr>
       <th><u>Folders</u></th>
       <th>   </th>

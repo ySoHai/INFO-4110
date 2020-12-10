@@ -39,7 +39,7 @@ function formatSizeUnits($bytes){
 }
 
 
-echo '<table class="table-sortable">
+echo '<table class="sortable">
       <tr>
       <th>File Name</th>
       <th>Folder</th>

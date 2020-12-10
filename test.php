@@ -1,5 +1,5 @@
 <html><head>
-<script src="sorttable.js"></script>
+<script src="./src/sorttable.js"></script>
 
 <style>
 tbody tr td {color:green;border-right:1px solid;width:200px;}
