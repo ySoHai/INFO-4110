@@ -16,7 +16,7 @@
         -Make drag and drop area bigger (add js popout to upload??)<br>
         -Searching by file name<br>
         -Establish rules for new file types (prob cant do cuz brain small boi)<br>
-        -Make cell phone/pad compatible<br>
+        -Make cell phone/pad compatible (more CSS yuck)<br>
       </h6>
       <div class="gallery-container">
         <h4>Click Column Header to Sort</h4>
