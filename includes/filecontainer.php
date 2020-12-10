@@ -75,7 +75,7 @@ echo '<table>
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
       if ($fileinfo->isFile()) {
-            $filepath = "../uploads/". $it->getSubPath() ."/". $fileinfo->getFilename();
+            $filepath = "/var/www/html/uploads/". $it->getSubPath() ."/". $fileinfo->getFilename();
             echo '<tr><td>';
             if (in_array($it->getSubPath(), $supported_image)) {
                echo '<img src="'. $filepath .'" width="35" height="35">';
