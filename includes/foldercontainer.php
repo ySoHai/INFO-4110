@@ -28,6 +28,7 @@ function dir_is_empty($path)
 echo '<table>
       <tr>
       <th>Folder</th>
+      <th></th>
       <th>Is file empty</th>
       </tr>';
 
@@ -36,7 +37,8 @@ echo '<table>
       if ($fileinfo->isDir()) {
             echo '<tr>
                   <td><u><b>'. strtoupper($fileinfo->getFilename()) .'</b></u>
-                  </td>';
+                  </td>
+                  <tr></td>';
             if (dir_is_empty('./uploads/' . $fileinfo->getFilename() . '/')) {
               echo '<td>True</td>
                     </tr>';
