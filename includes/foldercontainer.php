@@ -37,15 +37,15 @@ echo '<table>
   foreach ($it as $fileinfo) {
       if ($fileinfo->isDir()) {
             echo '<tr>
-                  <td><u><b>'. strtoupper($fileinfo->getFilename()) .'</b></u>
+                  <td style="text-align: center; vertical-align: middle;"><u><b>'. strtoupper($fileinfo->getFilename()) .'</b></u>
                   </td>
                   <td></td>
                   <td></td>';
             if (dir_is_empty('./uploads/' . $fileinfo->getFilename() . '/')) {
-              echo '<td>True</td>
+              echo '<td style="text-align: center; vertical-align: middle;">True</td>
                     </tr>';
             }else {
-              echo '<td>False</td>
+              echo '<td style="text-align: center; vertical-align: middle;">False</td>
                     </tr>';
             }
 
