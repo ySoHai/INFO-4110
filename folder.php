@@ -12,19 +12,19 @@
       <div class="gallery-container">
 
         <?php
-        require "includes/foldercontainer.php";
+          require "includes/foldercontainer.php";
         ?>
 
       </div>
 
       <?php
           echo'<div class="gallery-upload">
-            <form class="form-signup" action="includes/uploads.php" method="post" enctype="multipart/form-data">
-              <p><strong>Drag & Drop or Choose File</strong></p>
-              <input type="file" name="fileToUpload" id="fileToUpload">
-              <button type="submit" name="submit">UPLOAD</button>
-            </form>
-          </div>';
+                <form class="form-signup" action="includes/folder.php" method="post">
+                  <p><strong>Create Folder</strong></p>
+                  <input type="text" name="foldername" id="foldername" placeholder="Enter Folder Name" >
+                  <button type="submit" name="submit">Create Folder</button>
+                </form>
+              </div>';
       ?>
 
     </div>
