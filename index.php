@@ -14,7 +14,7 @@
         <h6>
           TO DO:<br>
           -Fix CSS (IDK WHAT IM DOING)<br>
-          -Fix column sort for download link
+          -Fix column sort for download link<br>
           -Fix table for folders page<br>
           -Make drag and drop area bigger (add js popout to upload??)<br>
           -Searching by file name<br>
