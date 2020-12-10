@@ -57,8 +57,6 @@ echo '<table>
       <th>File Name</th>
       <th>Folder</th>
       <th>Size</th>
-      <th>Last Access</th>
-      <th>Created Date</th>
       <th>Dowload Link</th>
       </tr>';
       // 1 File Name</th>
@@ -67,6 +65,8 @@ echo '<table>
       // 4 Last Access</th>
       // 5 Created Date</th> filectime
       // 6 Dowload Link</th>
+      // td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i", fileatime("../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'") . '</td>
+      // <td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i", filectime("../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'") . '</td>
 
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
@@ -80,8 +80,6 @@ echo '<table>
             echo  $fileinfo->getFilename() . '</td>
                   <td><u><b>'. strtoupper($it->getSubPath()).'</b></u></td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
-                  <td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i", fileatime("../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'") . '</td>
-                  <td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i", filectime("../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'") . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
           }
