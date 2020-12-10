@@ -62,7 +62,7 @@ echo '<table class="sortable">
   foreach ($it as $fileinfo) {
       if ($fileinfo->isFile()) {
             $filePath = "/var/www/html/uploads/". $it->getSubPath() ."/". $fileinfo->getFilename();
-            echo '<tbody><tr><td>';
+            echo '<tr><td>';
             if (in_array($it->getSubPath(), $supported_image)) {
                echo '<img src="' . "../uploads/". $it->getSubPath() ."/". $fileinfo->getFilename() . '" width="35" height="35">';
             }
@@ -74,7 +74,7 @@ echo '<table class="sortable">
                   <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",filectime($filePath)) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>
-                  </tbody>';
+                  ';
           }
   }
 
