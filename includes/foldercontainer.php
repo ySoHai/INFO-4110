@@ -27,8 +27,8 @@ function dir_is_empty($path)
 
 echo '<table>
       <tr>
-      <th>Folder      </th>
-      <th></th>
+      <th>Folders</th>
+      <th>   </th>
       <th>Is file empty</th>
       </tr>';
 
