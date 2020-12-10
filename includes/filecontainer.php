@@ -89,10 +89,6 @@ echo '<table>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
-          }else {
-            echo '<tr>
-                  <td>Folder Empty</td>
-                  </tr>';
           }
   }
 
