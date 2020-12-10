@@ -38,21 +38,6 @@ function formatSizeUnits($bytes){
     return $bytes;
 }
 
-function dir_is_empty($path)
-{
-    $empty = true;
-    $dir = opendir($path);
-    while($file = readdir($dir))
-    {
-        if($file != '.' && $file != '..')
-        {
-            $empty = false;
-            break;
-        }
-    }
-    closedir($dir);
-    return $empty;
-}
 
 echo '<table>
       <tr>
@@ -69,13 +54,12 @@ echo '<table>
       // 4 Last Access</th>
       // 5 Created Date</th> filectime
       // 6 Dowload Link</th>
-      // td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i", fileatime("../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'") . '</td>
-      // <td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i", filectime("../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'") . '</td>
+
 
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
       if ($fileinfo->isFile()) {
-            $filepath = "/var/www/html/uploads/". $it->getSubPath() ."/". $fileinfo->getFilename();
+            $filePath = "/var/www/html/uploads/". $it->getSubPath() ."/". $fileinfo->getFilename();
             echo '<tr><td>';
             if (in_array($it->getSubPath(), $supported_image)) {
                echo '<img src="' . "../uploads/". $it->getSubPath() ."/". $fileinfo->getFilename() . '" width="35" height="35">';
@@ -84,21 +68,11 @@ echo '<table>
             echo  $fileinfo->getFilename() . '</td>
                   <td><u><b>'. strtoupper($it->getSubPath()).'</b></u></td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
-                  <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",fileatime($filepath)) .'</td>
-                  <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",filectime($filepath)) . '</td>
+                  <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",fileatime($filePath)) .'</td>
+                  <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",filectime($filePath)) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
           }
   }
 
 echo '</table>';
-
-/* OLD file conteiner
-  echo '<a>
-  <div style="background-image: url(uploads/' . $it->getSubPath() .'/'. $fileinfo->getFilename() . ');"></div>
-  <h3> Folder: ' . $it->getSubPath() . '</h3>
-  <p>' . $fileinfo->getFilename() . '</p>
-  <p>Size: ' . $fileinfo->getSize() . '</p>
-  <a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'"></a>
-  </a>';
-*/

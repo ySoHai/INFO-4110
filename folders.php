@@ -7,12 +7,12 @@
 <main>
   <section class="cases-links">
     <div class="wrapper">
-      <h2>Files</h2>
+      <h2>Folders</h2>
 
       <div class="gallery-container">
 
         <?php
-        //show folders and sort
+        require "includes/foldercontainer.php";
         ?>
 
       </div>
