@@ -159,3 +159,24 @@ table.sortable thead {
     font-weight: bold;
     cursor: default;
 }
+/* Scrollability of table */
+table {
+  width: 1000px;
+  } /* fixed width table */
+
+thead tr {
+  display: block;
+  } /* makes it sizeable */
+tbody {
+  display: block; /* makes it sizeable */
+  height: 500px; /* height of scrollable area */
+  overflow: auto; /* scroll rather than overflow */
+  width: 100%; /* fill the box */
+}
+thead th {
+  width: 250px; 
+  } /* fixed width for THs */
+
+tbody td {
+  width: 242px;
+  } /* fixed width for TDs */
