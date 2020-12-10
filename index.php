@@ -10,6 +10,13 @@
       <h2>Files</h2>
       <div class="gallery-container">
         <h4>Click Column Header to Sort</h4>
+        <h6>
+          TO DO:<br>
+          -Fix CSS (IDK WHAT IM DOING)<br>
+          -Make drag and drop area bigger<br>
+          -Searching by file name<br>
+          -Establish rules for new file types(prob cant do cuz brain small boi)<br>
+        </h6>
         <?php
         require "includes/filecontainer.php";
         ?>
