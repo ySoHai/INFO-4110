@@ -59,8 +59,8 @@ echo '<table>
       <th>File Name</th>
       <th>Folder</th>
       <th>Size</th>
-      <th>Access Date</th>
-      <th>Created Date</th>
+      <th>Access Date (MM/DD)</th>
+      <th>Created Date (MM/DD)</th>
       <th>Dowload Link</th>
       </tr>';
       // 1 File Name</th>
@@ -84,8 +84,8 @@ echo '<table>
             echo  $fileinfo->getFilename() . '</td>
                   <td><u><b>'. strtoupper($it->getSubPath()).'</b></u></td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
-                  <td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i",fileatime($filepath)) .'</td>
-                  <td style="text-align: center; vertical-align: middle;">' . date("j/d/y H:i",filectime($filepath)) . '</td>
+                  <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",fileatime($filepath)) .'</td>
+                  <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",filectime($filepath)) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
           }
