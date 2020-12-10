@@ -57,7 +57,7 @@ echo '<table>
       <th>File Name</th>
       <th>Folder</th>
       <th>Size</th>
-      <th>Last Access</th>
+      <th>Access Date</th>
       <th>Created Date</th>
       <th>Dowload Link</th>
       </tr>';
@@ -73,16 +73,16 @@ echo '<table>
 // Basic loop displaying different messages based on file or folder
   foreach ($it as $fileinfo) {
       if ($fileinfo->isFile()) {
-
+            $filepath = "../uploads/". $it->getSubPath() ."/". $fileinfo->getFilename();
             echo '<tr><td>';
             if (in_array($it->getSubPath(), $supported_image)) {
-               echo '<img src="../uploads/' . $it->getSubPath() . '/' .$fileinfo->getFilename().'" width="35" height="35">';
+               echo '<img src="'. $filepath .'" width="35" height="35">';
             }
 
             echo  $fileinfo->getFilename() . '</td>
                   <td><u><b>'. strtoupper($it->getSubPath()).'</b></u></td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
-                  <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
+                  <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) .'</td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>';
