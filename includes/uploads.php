@@ -16,16 +16,15 @@ if(isset($_POST['submit'])){
   $fileActualExt = strtolower(end($fileExt));
   $targetDir = '../uploads/';
   $realDir = $targetDir.$fileActualExt.'/';
+  $fileDestination =  $realDir.$fileName;
 
   if($fileError == 0 ){
     if (!is_dir($realDir)) {
       mkdir($realDir);
     }
       if (strlen($fileName) < 36) {
-        if (!file_exists($realDir.$fileName)) {
+        if (!file_exists($fileDestination)) {
           if ($fileSize < 504857600) {
-
-            $fileDestination =   $realDir.$fileName;
             move_uploaded_file($fileTmpName, $fileDestination);
             echo "<script>alert('Successfully Uploaded');document.location='../index.php'</script>";
           }else {

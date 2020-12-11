@@ -70,8 +70,8 @@ echo '<table class="sortable">
             echo  $fileinfo->getFilename() . '</td>
                   <td><u><b>'. strtoupper($it->getSubPath()).'</b></u></td>
                   <td style="text-align: center; vertical-align: middle;">' . formatSizeUnits($fileinfo->getSize()) . '</td>
-                  <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",fileatime($filePath)) .'</td>
-                  <td style="text-align: center; vertical-align: middle;">' . date("j/d G:i",filectime($filePath)) . '</td>
+                  <td style="text-align: center; vertical-align: middle;">' . date("m/d G:i",fileatime($filePath)) .'</td>
+                  <td style="text-align: center; vertical-align: middle;">' . date("m/d G:i",filectime($filePath)) . '</td>
                   <td style="text-align: center; vertical-align: middle;"><a href="includes/download.php?file='. urlencode($fileinfo->getFilename()) .'">Download</a></td>
                   </tr>
                   ';
